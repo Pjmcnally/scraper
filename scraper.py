@@ -77,6 +77,16 @@ def get_set_info():
                 "Top 3 Red Commons",
                 "Top 3 Green Commons",
                 "Guild Rankings",
+                "Most Important Boros Common",
+                "Most Important Dimir Common",
+                "Most Important Golgari Common",
+                "Most Important Selesnya Common",
+                "Most Important Izzet Common",
+                "Boros",
+                "Dimir",
+                "Golgari",
+                "Selesnya",
+                "Izzet",
             ]),
         },
         {
@@ -89,7 +99,17 @@ def get_set_info():
                 "green",
                 "gold-artifacts-and-lands",
             ],
-            "ignore_list": set([])
+            "ignore_list": set([
+                "Ratings Scale",
+                "Top 5 White Commons",
+                "Top 5 Blue Commons",
+                "Top 5 Black Commons",
+                "Top 5 Red Commons",
+                "Top 5 Green Commons",
+                "Multicolored",
+                "Artifacts",
+                "Lands",
+            ])
         },
     ]
 
