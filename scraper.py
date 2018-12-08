@@ -143,6 +143,17 @@ def write_csv(set_, colors, ignore_list):
                 if card.text not in ignore_list:
                     name = card.text.strip()
 
+                    # Extract rating
+                    raw_rating = card.findNext('h3').text.replace(
+                        "Please, no more hexproof (", "").replace(
+                            "Limited:", "").replace(")", "").replace(" ", "")
+                    if "//" in raw_rating:
+                        main_rating, sup_rating = raw_rating.split("//", 1)
+                    elif "-" in raw_rating:
+                        main_rating, sup_rating = raw_rating.split("-", 1)
+                    else:
+                        main_rating, sup_rating = raw_rating, ""
+
 
                     csv_writer.writerow([name, rating, color, ph])
 
