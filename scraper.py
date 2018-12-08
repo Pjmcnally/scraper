@@ -154,6 +154,11 @@ def write_csv(set_, colors, ignore_list):
                     else:
                         main_rating, sup_rating = raw_rating, ""
 
+                    # Some paragraphs are empty. Check
+                    if card.findNext('p').text.strip():
+                        ph = card.findNext('p').text.strip()
+                    else:  # If empty skip to the next <p>
+                        ph = card.findNext('p').findNext('p').text.strip()
 
                     csv_writer.writerow([name, rating, color, ph])
 
