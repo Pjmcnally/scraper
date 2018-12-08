@@ -160,7 +160,13 @@ def write_csv(set_, colors, ignore_list):
                     else:  # If empty skip to the next <p>
                         ph = card.findNext('p').findNext('p').text.strip()
 
-                    csv_writer.writerow([name, rating, color, ph])
+                    csv_writer.writerow([
+                        name,
+                        main_rating,
+                        sup_rating,
+                        color.title(),
+                        ph,
+                    ])
 
 
 def main():
