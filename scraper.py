@@ -141,9 +141,8 @@ def write_csv(set_, colors, ignore_list):
             parser = bs(get_web_content(set_, color), 'html.parser')
             for card in parser.find_all('h1', class_=""):
                 if card.text not in ignore_list:
-                    name = card.text
-                    ph = card.findNext('p').text
-                    rating = card.findNext('h3').text.replace("Limited: ", "")
+                    name = card.text.strip()
+
 
                     csv_writer.writerow([name, rating, color, ph])
 
