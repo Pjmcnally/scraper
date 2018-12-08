@@ -129,7 +129,13 @@ def write_csv(set_, colors, ignore_list):
     file_path = f"C:\\Users\\Patrick\\Desktop\\{set_}.csv"
     with open(file_path, "w", encoding='utf-8', newline='') as f:
         csv_writer = csv.writer(f)
-        csv_writer.writerow(["Card Name", "Rating", "Color", "Notes"])
+        csv_writer.writerow([
+            "Card Name",
+            "Main Rating",
+            "Sup. Rating",
+            "Color",
+            "Notes",
+        ])
 
         for color in colors:
             parser = bs(get_web_content(set_, color), 'html.parser')
